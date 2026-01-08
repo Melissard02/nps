@@ -8,7 +8,7 @@ const park = {
   latitude: "44.59824417",
   longitude: "-110.5471695",
   latLong: "lat:44.59824417, long:-110.5471695",
-  states: "ID,MT,WY",
+  states: "ID, MT, WY",
   contacts: {
     phoneNumbers: [
       {
