@@ -1,0 +1,56 @@
+/* FOOTER */
+#park-footer {
+  position: relative;
+  background-image: url("https://byui-cse.github.io/wdd231-course/images/topo_pattern.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 2.25rem 1rem;
+  overflow: hidden;
+}
+
+#park-footer .contact {
+  max-width: 1100px;
+  padding: 0 1.25rem;
+}
+
+#park-footer h3 {
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-family: "Times New Roman", Times, serif;
+}
+
+#park-footer h4 {
+  margin: 1rem 0 0.4rem;
+  font-size: 0.95rem;
+  text-transform: capitalize;
+  letter-spacing: 0.06em;
+}
+
+/* MEDIUM SCREENS */
+@media (max-width: 600px) {
+  #park-footer {
+    padding: 1.75rem 0.85rem;
+    background-position: center;
+  }
+
+  #park-footer .contact {
+    padding: 0 0.5rem;
+  }
+
+  #park-footer h3 {
+    font-size: 1.1rem;
+  }
+
+  #park-footer h4 {
+    font-size: 0.9rem;
+  }
+
+  #park-footer p {
+    margin: 0.35rem 0;
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+}

@@ -1,27 +1,36 @@
+// main.js
 import { getParkData } from "./parkService.mjs";
 
-const parkData = getParkData();
-
-const parkInfoLinks = [
-    {
-        name: "Current Conditions &#x203A;",
-        link: "conditions.html",
-        image: parkData.images[2].url,
-        description: "See what conditions to expect in the park before leaving on your trip!"
-    },
-    {
-        name: "Fees and Passes &#x203A;",
-        link: "fees.html",
-        image: parkData.images[3].url,
-        description: "Learn about the fees and passes that are available."
-    },
-    {
-        name: "Vistor Centers &#x203A;",
-        link: "vistor_centers.html",
-        image: parkData.images[9].url,
-        description: "Learn about the visitor centers in the park."
-    }
+async function init() {
+    const parkData = await getParkData();
+    
+    const parkInfoLinks = [
+  {
+    name: "Current Conditions &#x203A;",
+    link: "conditions.html",
+    image: getImageUrl(parkData, 2),
+    description: "See what conditions to expect in the park before leaving on your trip!"
+  },
+  {
+    name: "Fees and Passes &#x203A;",
+    link: "fees.html",
+    image: getImageUrl(parkData, 3),
+    description: "Learn about the fees and passes that are available."
+  },
+  {
+    name: "Vistor Centers &#x203A;",
+    link: "vistor_centers.html",
+    image: getImageUrl(parkData, 9, 1),
+    description: "Learn about the visitor centers in the park."
+  }
 ];
+    setHeaderInfo(parkData);
+    setIntroSection(parkData);
+    setInfoSection(parkInfoLinks);
+    setFooter(parkData);
+}
+
+
 
 function setHeaderInfo(data) {
     // DISCLAIMER SECTION
@@ -39,7 +48,6 @@ function setHeaderInfo(data) {
     document.querySelector(".hero-banner__content").innerHTML =
     parkInfoTemplate(data);
 }
-
 
 function setIntroSection(data) {
     // PARK FULL NAME / DESCRIPTION
@@ -80,32 +88,38 @@ function mediaCardTemplate(info) {
 }
 
 function getMailingAddress(addresses) {
-    const mailing = addresses.find((address) => address.type === "Mailing");
-    return mailing;
+    return addresses?.find(a => a.type === "Mailing") ?? addresses?.[0] ?? null;
 }
 
 function getPhone(numbers) {
-    const phone = numbers.find((number) => number.type === "Voice");
-    return phone.phoneNumber;
+    const phone = numbers?.find(n => n.type === "Voice") ?? numbers?.[0] ?? null;
+  return phone?.phoneNumber ?? "Not available";
+
 }
 
-function footerTemplate(info){
-    const mailing = getMailingAddress(info.addresses);
-    const phone = getPhone(info.contacts.phoneNumbers)
+function footerTemplate(info) {
+  const mailing = getMailingAddress(info.addresses);
+  const phone = getPhone(info.contacts?.phoneNumbers);
 
-    return `<section class="contact">
+  const mailingHtml = mailing
+    ? `<div><p>${mailing.line1}</p><p>${mailing.city}, ${mailing.stateCode} ${mailing.postalCode}</p></div>`
+    : `<p>Mailing address not available</p>`;
+
+  return `<section class="contact">
     <h3>Contact Info</h3>
     <h4>Mailing Address:</h4>
-    <div><p>${mailing.line1}<p>
-    <p>${mailing.city}, ${mailing.stateCode} ${mailing.postalCode}</p></div>
+    ${mailingHtml}
     <h4>Phone:</h4>
     <p>${phone}</p>
-    </section>`;
+  </section>`;
 }
+
+function getImageUrl(parkData, index, fallbackIndex = 0) {
+  return parkData?.images?.[index]?.url ?? parkData?.images?.[fallbackIndex]?.url ?? "";
+}
+
 
 
 // RUN THE FUNCTIONS HERE
-setHeaderInfo(parkData);
-setIntroSection(parkData);
-setInfoSection(parkInfoLinks);
-setFooter(parkData);
+init();
+
