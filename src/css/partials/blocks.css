@@ -32,7 +32,7 @@
   color: inherit;
 }
 
-.media-card-img {
+.media-card__img {
   width: 100%;
   height: 17rem;
   object-fit: cover;
