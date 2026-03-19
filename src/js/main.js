@@ -33,7 +33,7 @@ async function init() {
   setHeaderFooter(parkData);
   setParkIntro(parkData);
   setParkInfoLinks(links);
-  enableNavigation();
+  // enableNavigation();
 }
 
 init();

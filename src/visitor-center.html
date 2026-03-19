@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>[Park Name]</title>
     <!-- <link rel="stylesheet" href="css/style.css" /> -->
-    <script type="module" src="js/conditions.js"></script>
+    <script type="module" src="js/visitor-center.js"></script>
   </head>
   <body>
     <p class="disclaimer">
@@ -13,7 +13,6 @@
       landed here by accident, to find the real website visit
       <a href="parkUrl">[park name]</a>
     </p>
-
     <div class="skip-links" aria-label="short-cut links" role="navigation">
       <ul>
         <li>
@@ -42,15 +41,7 @@
         </li>
       </ul>
     </div>
-  
     <header>
-    <!--  
-    ====================================
-    ************************************
-    HEADER
-    ************************************
-    ====================================
-    -->    
       <section class="global-header">
         <a href="index.html" class="site-title"
           ><span class="logo" role="presentation"></span>
@@ -193,25 +184,21 @@
           </ul>
         </nav>
       </section>
-      
-    <!--  
-    ====================================
-    ************************************
-    HERO
-    ************************************
-    ====================================
-    -->
       <section id="park-header">
         <div class="hero-banner">
           <img src="" alt="" />
           <div class="hero-banner__content">
-            
+            <!-- <a href="#" class="hero-banner__title">Yellowstone</a>
+            <p class="hero-banner__subtitle">
+              <span>National Park</span>
+              <span>ID, MT, WY</span>
+            </p> -->
           </div>
         </div>
         <nav class="park-nav">
           <ul>
             <li>
-              <a href="#">
+              <a href="conditions.html">
                 <span>Info</span>
                 <svg class="icon" role="presentation" focusable="false">
                   <use
@@ -222,7 +209,7 @@
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="conditions.html">
                 <span>Alerts</span>
                 <svg class="icon" role="presentation" focusable="false">
                   <use
@@ -269,120 +256,117 @@
         </nav>
       </section>
     </header>
-
-    <main id="main">
+    <main id="main" class="vc-main">
       <h1 class="vc-name">
         <svg class="icon" role="presentation" focusable="false">
           <use
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          xlink:href="/images/sprite.symbol.svg#ranger-station"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xlink:href="/images/sprite.symbol.svg#ranger-station"
           ></use>
         </svg>
-      [Visitor center name]
+        [Visitor center name]
       </h1>
-
       <section class="vc-info">
-          <figure>
-              <img src="https://via.placeholder.com/150" alt="center image" />
-              <figcaption>
-              [visitor center image] <span>[attribution]</span>
-              </figcaption>
-          </figure>
-          <p>[info here]</p> 
+        <!-- <figure>
+          <img src="https://via.placeholder.com/150" alt="center image" />
+          <figcaption>
+            [visitor center image] <span>[attribution]</span>
+          </figcaption>
+        </figure>
+        <p>[info here]</p> -->
       </section>
-
       <section class="vc-details-list">
-          <details name="vc-details" id="vcAddresses">
-              <summary>
-              <svg class="icon" role="presentation" focusable="false">
-                  <use
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                  xlink:href="/images/sprite.symbol.svg#heading-icon_map-pin"
-                  ></use>
-              </svg>
-              Addresses
-              </summary>
-              <!-- Remove later -->
-              <section class="vc-addresses__physical">
-              <h3>Physical Address</h3>
-              <address>
-                  [Address part 1]<br />
-                  [park name], [state] [zip]
-              </address>
-              </section>
-              <section class="vc-addresses__mailing">
-              <h3>Mailing Address</h3>
-              <address>
-                  [Address part 1]<br />
-                  [park name], [state] [zip]
-              </address>
-              </section>
-          </details>
-          <details name="vc-details" id="vcDirections">
-              <summary>
-              <svg class="icon" role="presentation" focusable="false">
-                  <use
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                  xlink:href="/images/sprite.symbol.svg#directions"
-                  ></use>
-              </svg>
-              Directions
-              </summary>
-              <p>[directions]</p>
-              <!-- remove later -->
-          </details>
-          <details name="vc-details" id="vcAmenities">
-              <summary>
-              <svg class="icon" role="presentation" focusable="false">
-                  <use
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                  xlink:href="/images/sprite.symbol.svg#heading-icon_info"
-                  ></use>
-              </svg>
-              Amenities
-              </summary>
-              <ul> <!-- Remove later -->
-              <li>All</li>
-              <li>the</li>
-              <li>amenities</li>
-              </ul>
-              
-          </details>
-          <details name="vc-details" id="vcContact">
-              <summary>
-              <svg class="icon" role="presentation" focusable="false">
-                  <use
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                  xlink:href="/images/sprite.symbol.svg#phone"
-                  ></use>
-              </svg>
-              Contact Information
-              </summary>
-              <!-- Remove later -->
-              <section class="vc-contact__email">
-              <h3>Email Address</h3>
-              <a href="email:">Send this visitor center an email</a>
-              </section>
-              <section class="vc-contact__phone">
-              <h3>Phone numbers</h3>
-              <a href="tel:+12083591111">[phone]</a>
-              </section>
-          </details>
+        <details name="vc-details" id="vcAddresses">
+          <summary>
+            <svg class="icon" role="presentation" focusable="false">
+              <use
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xlink:href="/images/sprite.symbol.svg#heading-icon_map-pin"
+              ></use>
+            </svg>
+            Addresses
+          </summary>
+          <!-- Remove later -->
+          <!-- <section class="vc-addresses__physical">
+            <h3>Physical Address</h3>
+            <address>
+              [Address part 1]<br />
+              [park name], [state] [zip]
+            </address>
+          </section>
+          <section class="vc-addresses__mailing">
+            <h3>Mailing Address</h3>
+            <address>
+              [Address part 1]<br />
+              [park name], [state] [zip]
+            </address>
+          </section> -->
+        </details>
+        <details name="vc-details" id="vcDirections">
+          <summary>
+            <svg class="icon" role="presentation" focusable="false">
+              <use
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xlink:href="/images/sprite.symbol.svg#directions"
+              ></use>
+            </svg>
+            Directions
+          </summary>
+          <!-- remove later -->
+          <!-- <p>[directions]</p> -->
+        </details>
+        <details name="vc-details" id="vcAmenities">
+          <summary>
+            <svg class="icon" role="presentation" focusable="false">
+              <use
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xlink:href="/images/sprite.symbol.svg#heading-icon_info"
+              ></use>
+            </svg>
+            Amenities
+          </summary>
+          <!-- Remove later -->
+          <!-- <ul>
+            <li>All</li>
+            <li>the</li>
+            <li>amenities</li>
+          </ul> -->
+        </details>
+        <details name="vc-details" id="vcContact">
+          <summary>
+            <svg class="icon" role="presentation" focusable="false">
+              <use
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xlink:href="/images/sprite.symbol.svg#phone"
+              ></use>
+            </svg>
+            Contact Information
+          </summary>
+          <!-- Remove later -->
+          <!-- <section class="vc-contact__email">
+            <h3>Email Address</h3>
+            <a href="email:">Send this visitor center an email</a>
+          </section>
+          <section class="vc-contact__phone">
+            <h3>Phone numbers</h3>
+            <a href="tel:+12083591111">[phone]</a>
+          </section> -->
+        </details>
       </section>
-
       <section class="vc-gallery">
         <h2>
-            <svg class="icon" role="presentation" focusable="false">
+          <svg class="icon" role="presentation" focusable="false">
             <use
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xlink:href="/images/sprite.symbol.svg#camera-alt"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xlink:href="/images/sprite.symbol.svg#camera-alt"
             ></use>
-            </svg>
-            Image Gallery
+          </svg>
+          Image Gallery
         </h2>
-        <ul> <!-- Remove later -->
-            <li><img src="" alt="" /></li>
-        </ul>
+        <!-- Remove later -->
+        <!-- <ul>
+          <li><img src="" alt="" /></li>
+        </ul> -->
       </section>
     </main>
     <footer id="park-footer" class="park-footer"></footer>
